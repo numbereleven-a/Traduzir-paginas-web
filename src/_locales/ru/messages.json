@@ -596,5 +596,17 @@
   },
   "btnChangePosition": {
     "message": "Изменить положение"
+  },
+  "contextMenuExcludeSelection": {
+    "message": "Добавить выделенное в исключения перевода"
+  },
+  "customDictionaryKeyword": {
+    "message": "Слово или фраза без перевода"
+  },
+  "customDictionaryReplacement": {
+    "message": "Замена (необязательно)"
+  },
+  "contextMenuRemoveSelectionExclusion": {
+    "message": "Убрать выделенное из исключений перевода"
   }
 }

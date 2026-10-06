@@ -596,5 +596,17 @@
   },
   "btnChangePosition": {
     "message": "Change position"
+  },
+  "contextMenuExcludeSelection": {
+    "message": "Add selection to translation exclusions"
+  },
+  "customDictionaryKeyword": {
+    "message": "Word or phrase to keep untranslated"
+  },
+  "customDictionaryReplacement": {
+    "message": "Replacement (optional)"
+  },
+  "contextMenuRemoveSelectionExclusion": {
+    "message": "Remove selection from translation exclusions"
   }
 }
