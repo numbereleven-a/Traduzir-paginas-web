@@ -596,5 +596,11 @@
   },
   "btnChangePosition": {
     "message": "Change position"
+  },
+  "contextMenuExcludeSelection": {
+    "message": "Add selection to translation exclusions"
+  },
+  "contextMenuRemoveSelectionExclusion": {
+    "message": "Remove selection from translation exclusions"
   }
 }

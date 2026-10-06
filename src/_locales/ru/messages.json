@@ -596,5 +596,11 @@
   },
   "btnChangePosition": {
     "message": "Изменить положение"
+  },
+  "contextMenuExcludeSelection": {
+    "message": "Добавить выделенное в исключения перевода"
+  },
+  "contextMenuRemoveSelectionExclusion": {
+    "message": "Убрать выделенное из исключений перевода"
   }
 }
