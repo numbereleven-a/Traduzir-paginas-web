@@ -123,7 +123,7 @@ function updateTranslateSelectedContextMenu() {
     chrome.contextMenus.create({
       id: "translate-image-text",
       title: twpI18n.getMessage("imageTranslateTitle"),
-      contexts: ["image"],
+      contexts: chrome.contextMenus.onShown ? ["image", "link", "page"] : ["image"],
     });
     chrome.contextMenus.remove("translate-selected-text", checkedLastError);
     chrome.contextMenus.remove(
@@ -374,6 +374,28 @@ function sendTranslatePageMessage(tabId, targetLanguage) {
   }
 }
 
+if (chrome.contextMenus?.onShown) {
+  let menuInstance = 0;
+  chrome.contextMenus.onHidden.addListener(() => { menuInstance++; });
+  chrome.contextMenus.onShown.addListener((info, tab) => {
+    const instance = ++menuInstance;
+    const update = (srcUrl) => {
+      if (instance !== menuInstance) return;
+      chrome.contextMenus.update("translate-image-text", { visible: !!srcUrl }, () => {
+        if (!chrome.runtime.lastError && instance === menuInstance) chrome.contextMenus.refresh();
+      });
+    };
+    if (info.srcUrl) {
+      update(info.srcUrl);
+    } else if (tab?.id) {
+      chrome.tabs.sendMessage(tab.id, { action: "getContextImage" },
+        { frameId: info.frameId || 0 }, (srcUrl) => {
+          update(chrome.runtime.lastError ? null : srcUrl);
+        });
+    } else update(null);
+  });
+}
+
 if (typeof chrome.contextMenus !== "undefined") {
   const updateActionContextMenu = () => {
     chrome.contextMenus.remove("browserAction-showPopup", checkedLastError);
@@ -425,14 +447,25 @@ if (typeof chrome.contextMenus !== "undefined") {
 
   chrome.contextMenus.onClicked.addListener((info, tab) => {
     if (info.menuItemId == "translate-image-text") {
-      chrome.windows.create({
-        url: chrome.runtime.getURL("imageTranslation/imageTranslation.html") +
-          "#image=" + encodeURIComponent(info.srcUrl),
-        type: "popup",
-        width: 960,
-        height: 760,
-        incognito: !!tab?.incognito,
-      }, checkedLastError);
+      const openImage = (srcUrl) => {
+        if (!srcUrl) return;
+        chrome.windows.create({
+          url: chrome.runtime.getURL("imageTranslation/imageTranslation.html") +
+            "#image=" + encodeURIComponent(srcUrl),
+          type: "popup",
+          width: 960,
+          height: 760,
+          incognito: !!tab?.incognito,
+        }, checkedLastError);
+      };
+      if (info.srcUrl) {
+        openImage(info.srcUrl);
+      } else if (tab?.id) {
+        chrome.tabs.sendMessage(tab.id, { action: "getContextImage" },
+          { frameId: info.frameId || 0 }, (srcUrl) => {
+            if (!chrome.runtime.lastError) openImage(srcUrl);
+          });
+      }
     } else if (info.menuItemId == "translate-web-page") {
       const mimeType = tabToMimeType[tab.id];
       if (
