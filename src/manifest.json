@@ -4,7 +4,7 @@
   "default_locale": "en",
   "name": "TWP - Translate Web Pages",
   "description": "__MSG_extensionDescription__",
-  "version": "10.2.5.4",
+  "version": "10.2.5.5",
   "homepage_url": "https://github.com/FilipePS/Traduzir-paginas-web",
   "browser_specific_settings": {
     "gecko": {
@@ -128,6 +128,7 @@
       "match_about_blank": true,
       "js": [
         "/lib/i18n.js",
+        "/contentScript/imageContext.js",
         "/contentScript/showOriginal.js",
         "/contentScript/pageTranslator.js",
         "/contentScript/translateSelected.js",
