@@ -12,6 +12,9 @@
     <div class="controls">
       <label for="targetLanguage" data-i18n="imageTranslateTarget">Translate into</label>
       <select id="targetLanguage"></select>
+      <button id="replaceImage" data-i18n="imageReplaceButton" disabled>On image</button>
+      <button id="showText" data-i18n="imageShowText" hidden>Text</button>
+      <a id="downloadImage" data-i18n="imageDownload" download="translated-image.png" hidden>Download PNG</a>
       <button id="translate" data-i18n="btnTranslate" disabled>Translate</button>
     </div>
   </header>
@@ -20,6 +23,7 @@
     <section class="result">
       <label for="translated" data-i18n="imageTranslateResult">Translation</label>
       <textarea id="translated" readonly></textarea>
+      <div id="imageResult" hidden></div>
     </section>
     <details id="sourceDetails">
       <summary data-i18n="imageTranslateDetails">Image, recognized text and settings</summary>
@@ -49,6 +53,7 @@
   <script src="/lib/config.js"></script>
   <script src="/lib/i18n.js"></script>
   <script src="/ocr/tesseract.min.js"></script>
+  <script src="imageRenderer.js"></script>
   <script src="imageTranslation.js"></script>
 </body>
 </html>

@@ -665,5 +665,26 @@
   },
   "imageTranslateDetails": {
     "message": "Картинка, распознанный текст и настройки"
+  },
+  "imageReplaceButton": {
+    "message": "На картинке"
+  },
+  "imageShowText": {
+    "message": "Текст"
+  },
+  "imageDownload": {
+    "message": "Скачать PNG"
+  },
+  "imageReplaceWorking": {
+    "message": "Замена текста на картинке…"
+  },
+  "imageReplaceReady": {
+    "message": "Картинка готова. Лучший результат получается на однотонном фоне."
+  },
+  "imageReplaceError": {
+    "message": "Не удалось разместить перевод. Попробуйте текстовый режим или распознайте картинку заново."
+  },
+  "imageReplaceEdited": {
+    "message": "Для замены текста на картинке после правки распознайте её заново."
   }
 }

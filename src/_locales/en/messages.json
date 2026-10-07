@@ -665,5 +665,26 @@
   },
   "imageTranslateDetails": {
     "message": "Image, recognized text and settings"
+  },
+  "imageReplaceButton": {
+    "message": "On image"
+  },
+  "imageShowText": {
+    "message": "Text"
+  },
+  "imageDownload": {
+    "message": "Download PNG"
+  },
+  "imageReplaceWorking": {
+    "message": "Replacing text in image…"
+  },
+  "imageReplaceReady": {
+    "message": "Image ready. Simple backgrounds give the best result."
+  },
+  "imageReplaceError": {
+    "message": "Could not place the translation. Try text mode or recognize the image again."
+  },
+  "imageReplaceEdited": {
+    "message": "To replace text on the image, recognize it again after editing."
   }
 }
