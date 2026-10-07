@@ -119,6 +119,12 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
 function updateTranslateSelectedContextMenu() {
   if (typeof chrome.contextMenus !== "undefined") {
+    chrome.contextMenus.remove("translate-image-text", checkedLastError);
+    chrome.contextMenus.create({
+      id: "translate-image-text",
+      title: twpI18n.getMessage("imageTranslateTitle"),
+      contexts: ["image"],
+    });
     chrome.contextMenus.remove("translate-selected-text", checkedLastError);
     chrome.contextMenus.remove(
       "add-selection-to-custom-dictionary",
@@ -418,7 +424,16 @@ if (typeof chrome.contextMenus !== "undefined") {
   });
 
   chrome.contextMenus.onClicked.addListener((info, tab) => {
-    if (info.menuItemId == "translate-web-page") {
+    if (info.menuItemId == "translate-image-text") {
+      chrome.windows.create({
+        url: chrome.runtime.getURL("imageTranslation/imageTranslation.html") +
+          "#image=" + encodeURIComponent(info.srcUrl),
+        type: "popup",
+        width: 960,
+        height: 760,
+        incognito: !!tab?.incognito,
+      }, checkedLastError);
+    } else if (info.menuItemId == "translate-web-page") {
       const mimeType = tabToMimeType[tab.id];
       if (
         mimeType &&

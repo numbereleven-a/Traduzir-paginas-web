@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Translate text in an image</title>
+  <link rel="stylesheet" href="imageTranslation.css">
+</head>
+<body>
+  <header>
+    <h1 data-i18n="imageTranslateTitle">Translate text in an image</h1>
+    <div class="controls">
+      <label for="targetLanguage" data-i18n="imageTranslateTarget">Translate into</label>
+      <select id="targetLanguage"></select>
+      <button id="translate" data-i18n="btnTranslate" disabled>Translate</button>
+    </div>
+  </header>
+  <main>
+    <p id="status" role="status" aria-live="polite"></p>
+    <section class="result">
+      <label for="translated" data-i18n="imageTranslateResult">Translation</label>
+      <textarea id="translated" readonly></textarea>
+    </section>
+    <details id="sourceDetails">
+      <summary data-i18n="imageTranslateDetails">Image, recognized text and settings</summary>
+      <div class="controls source-controls">
+        <label for="ocrLanguage" data-i18n="imageTranslateOcrLanguage">Text language</label>
+        <select id="ocrLanguage">
+          <option value="eng" data-i18n="imageTranslateEnglish">English</option>
+          <option value="rus" data-i18n="imageTranslateRussian">Russian</option>
+          <option value="eng+rus" data-i18n="imageTranslateBoth">English and Russian</option>
+        </select>
+        <button id="recognize" data-i18n="imageTranslateRecognize" disabled>Recognize again</button>
+      </div>
+      <div class="source-content">
+        <section class="preview">
+          <img id="image" alt="" hidden>
+        </section>
+        <div>
+          <label for="original" data-i18n="imageTranslateOriginal">Recognized text (editable)</label>
+          <textarea id="original" spellcheck="false" disabled></textarea>
+        </div>
+      </div>
+      <p class="privacy" data-i18n="imageTranslatePrivacy">Text recognition runs locally. Only recognized text is sent to your selected translation service.</p>
+    </details>
+  </main>
+  <script src="/lib/checkedLastError.js"></script>
+  <script src="/lib/languages.js"></script>
+  <script src="/lib/config.js"></script>
+  <script src="/lib/i18n.js"></script>
+  <script src="/ocr/tesseract.min.js"></script>
+  <script src="imageTranslation.js"></script>
+</body>
+</html>
