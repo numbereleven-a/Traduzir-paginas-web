@@ -608,5 +608,62 @@
   },
   "contextMenuRemoveSelectionExclusion": {
     "message": "Убрать выделенное из исключений перевода"
+  },
+  "imageTranslateTitle": {
+    "message": "Перевести текст на изображении"
+  },
+  "imageTranslatePrivacy": {
+    "message": "Распознавание работает локально. Выбранному сервису перевода отправляется только распознанный текст."
+  },
+  "imageTranslateOcrLanguage": {
+    "message": "Язык текста"
+  },
+  "imageTranslateEnglish": {
+    "message": "Английский"
+  },
+  "imageTranslateRussian": {
+    "message": "Русский"
+  },
+  "imageTranslateBoth": {
+    "message": "Английский и русский"
+  },
+  "imageTranslateRecognize": {
+    "message": "Распознать заново"
+  },
+  "imageTranslateTarget": {
+    "message": "Перевести на"
+  },
+  "imageTranslateOriginal": {
+    "message": "Распознанный текст (можно исправить)"
+  },
+  "imageTranslateResult": {
+    "message": "Перевод"
+  },
+  "imageTranslateLoading": {
+    "message": "Загрузка изображения…"
+  },
+  "imageTranslateRecognizing": {
+    "message": "Распознавание текста…"
+  },
+  "imageTranslateTranslating": {
+    "message": "Перевод…"
+  },
+  "imageTranslateDone": {
+    "message": "Перевод готов."
+  },
+  "imageTranslateNoText": {
+    "message": "Текст не найден. Попробуйте выбрать другой язык текста."
+  },
+  "imageTranslateLoadError": {
+    "message": "Не удалось загрузить изображение. Возможно, сайт ограничивает доступ или адрес изображения временный."
+  },
+  "imageTranslateOcrError": {
+    "message": "Не удалось распознать текст на изображении. Попробуйте ещё раз."
+  },
+  "imageTranslateTranslationError": {
+    "message": "Перевод не удался. Распознанный текст сохранён в окне — попробуйте перевести ещё раз."
+  },
+  "imageTranslateDetails": {
+    "message": "Картинка, распознанный текст и настройки"
   }
 }

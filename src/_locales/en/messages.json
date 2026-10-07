@@ -608,5 +608,62 @@
   },
   "contextMenuRemoveSelectionExclusion": {
     "message": "Remove selection from translation exclusions"
+  },
+  "imageTranslateTitle": {
+    "message": "Translate text in an image"
+  },
+  "imageTranslatePrivacy": {
+    "message": "Text recognition runs locally. Only recognized text is sent to your selected translation service."
+  },
+  "imageTranslateOcrLanguage": {
+    "message": "Text language"
+  },
+  "imageTranslateEnglish": {
+    "message": "English"
+  },
+  "imageTranslateRussian": {
+    "message": "Russian"
+  },
+  "imageTranslateBoth": {
+    "message": "English and Russian"
+  },
+  "imageTranslateRecognize": {
+    "message": "Recognize again"
+  },
+  "imageTranslateTarget": {
+    "message": "Translate into"
+  },
+  "imageTranslateOriginal": {
+    "message": "Recognized text (editable)"
+  },
+  "imageTranslateResult": {
+    "message": "Translation"
+  },
+  "imageTranslateLoading": {
+    "message": "Loading image…"
+  },
+  "imageTranslateRecognizing": {
+    "message": "Recognizing text…"
+  },
+  "imageTranslateTranslating": {
+    "message": "Translating…"
+  },
+  "imageTranslateDone": {
+    "message": "Translation ready."
+  },
+  "imageTranslateNoText": {
+    "message": "No text found. Try another text language."
+  },
+  "imageTranslateLoadError": {
+    "message": "Could not load this image. The site may restrict access, or the image URL may be temporary."
+  },
+  "imageTranslateOcrError": {
+    "message": "Could not recognize text in this image. Try again."
+  },
+  "imageTranslateTranslationError": {
+    "message": "Translation failed. The recognized text is available; try translating again."
+  },
+  "imageTranslateDetails": {
+    "message": "Image, recognized text and settings"
   }
 }

@@ -1,0 +1,7 @@
+Tesseract.js 7.0.0 and Tesseract.js-core 7.0.0 (Apache-2.0).
+English and Russian traineddata from @tesseract.js-data packages 1.0.0, 4.0.0_best_int (Apache-2.0).
+Sources: https://github.com/naptha/tesseract.js
+https://github.com/naptha/tesseract.js-core
+https://github.com/naptha/tessdata
+
+Recognition uses the bundled LSTM cores and language data.
