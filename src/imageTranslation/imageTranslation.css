@@ -27,3 +27,8 @@ summary { cursor: pointer; padding: 8px 0; position: sticky; top: 0; background:
   body { padding: 10px; }
   .source-content { grid-template-columns: 1fr; }
 }
+
+#imageResult { flex: 1; min-height: 0; overflow: auto; text-align: center; }
+#imageResult canvas { max-width: 100%; height: auto; }
+#imageResult[hidden], #translated[hidden] { display: none; }
+#downloadImage { font-size: .9rem; }
