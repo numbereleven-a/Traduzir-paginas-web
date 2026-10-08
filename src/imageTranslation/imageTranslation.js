@@ -60,6 +60,8 @@
           } else resolve(response);
         });
       });
+      $("translated").value = texts.join("\n\n");
+      $("translated").dir = twpLang.isRtlLanguage($("targetLanguage").value) ? "rtl" : "ltr";
       const canvas = imageRenderer.draw($("image"), regions, texts,
         twpLang.isRtlLanguage($("targetLanguage").value));
       const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/png"));
@@ -71,8 +73,6 @@
       $("imageResult").hidden = false;
       $("translated").hidden = true;
       $("showText").hidden = false;
-      $("translated").value = texts.join("\n\n");
-      $("translated").dir = twpLang.isRtlLanguage($("targetLanguage").value) ? "rtl" : "ltr";
       status("imageReplaceReady");
     } catch {
       status("imageReplaceError", true);
@@ -157,7 +157,11 @@
       }
       setBusy(false);
     }
-    if ($("original").value) await translate();
+    if (regions.length) {
+      await replaceImage();
+    } else if ($("original").value) {
+      await translate();
+    }
   }
 
   window.addEventListener("pagehide", () => {
